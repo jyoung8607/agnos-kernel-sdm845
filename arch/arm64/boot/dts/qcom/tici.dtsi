@@ -31,6 +31,17 @@
 	};
 };
 
+/* Bluetooth (WCN3990) on hsuart0 (alias for qupv3_se6_4uart) */
+&hsuart0 {
+  status = "ok";
+  bluetooth {
+    compatible = "qcom,wcn3990-bt";
+    max-speed = <3200000>;
+    firmware-name = "crnv21.bin";
+  };
+};
+
+
 /* audio and power monitor(ina230) I2C, /dev/i2c-0 */
 &qupv3_se10_i2c {
   status = "ok";
