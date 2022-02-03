@@ -36,11 +36,14 @@
   status = "ok";
   bluetooth {
     compatible = "qcom,wcn3990-bt";
+    vddio-supply = <&pm8998_l5>;
+    vddxo-supply = <&pm8998_l7>;
+    vddrf-supply = <&pm8998_l17>;
+    vddch0-supply = <&pm8998_l25>;
     max-speed = <3200000>;
     firmware-name = "crnv21.bin";
   };
 };
-
 
 /* audio and power monitor(ina230) I2C, /dev/i2c-0 */
 &qupv3_se10_i2c {

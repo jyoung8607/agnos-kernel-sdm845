@@ -17,6 +17,8 @@ config BT_RTL
 config BT_QCA
 	tristate
 	select FW_LOADER
+        help
+          Qualcomm QCA BT stuff and things
 
 config BT_HCIBTUSB
 	tristate "HCI USB driver"
