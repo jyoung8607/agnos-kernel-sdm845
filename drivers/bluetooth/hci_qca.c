@@ -458,14 +458,10 @@ static int qca_open(struct hci_uart *hu)
 
 	hu->priv = qca;
 
-	init_timer(&qca->wake_retrans_timer);
-	qca->wake_retrans_timer.function = hci_ibs_wake_retrans_timeout;
-	qca->wake_retrans_timer.data = (u_long)hu;
+	timer_setup(&qca->wake_retrans_timer, hci_ibs_wake_retrans_timeout, 0);
 	qca->wake_retrans = IBS_WAKE_RETRANS_TIMEOUT_MS;
 
-	init_timer(&qca->tx_idle_timer);
-	qca->tx_idle_timer.function = hci_ibs_tx_idle_timeout;
-	qca->tx_idle_timer.data = (u_long)hu;
+	timer_setup(&qca->tx_idle_timer, hci_ibs_tx_idle_timeout, 0);
 	qca->tx_idle_delay = IBS_TX_IDLE_TIMEOUT_MS;
 
 	if (hu->serdev) {
