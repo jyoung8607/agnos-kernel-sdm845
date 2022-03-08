@@ -441,8 +441,8 @@
 	};
 
   // GPS UART?
-  qupv3_gps_uart: qcom,qup_uart@0x88c000 {
-		compatible = "qcom,msm-geni-serial-hs", "qcom,msm-geni-uart";
+  qupv3_se3_4uart: qcom,qup_uart@0x88c000 {
+		compatible = "qcom,msm-geni-serial-hs";
 		reg = <0x88c000 0x4000>;
 		reg-names = "se_phys";
 		clock-names = "se-clk", "m-ahb", "s-ahb";
