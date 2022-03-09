@@ -105,6 +105,10 @@
   status = "ok";
   bluetooth {
     compatible = "qcom,wcn3990-bt";
+    vddio-supply = <&pm8998_s3>;
+    vddxo-supply = <&pm8998_s5>;
+    vddrf-supply = <&pm8998_l17>;
+    vddch0-supply = <&pm8998_l25>;
     max-speed = <3200000>;
     firmware-name = "crnv21.bin";
   };
